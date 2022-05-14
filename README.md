@@ -37,6 +37,7 @@ Clone this repository:
    * `gem install bundler`
    * Then run: `bundle install`
    * Run the command `rails db:create` to setup database.
+   * Run the command `rake db:migrate` to create databse tables and columns.
    * Then `rails s` to launch the application
 
 
