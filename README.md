@@ -49,7 +49,7 @@ To auto-correct Rubocop offenses run: `rubocop --auto-correct-all`
 
 ### Run tests
 - To run All the tests:
-   * Open the terminal and run `bundle exec rspec spec` (please don't forget the dot after rspec)
+   * Open the terminal and run `bundle exec rspec spec`
 
 ## Author
 
