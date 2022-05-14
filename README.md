@@ -47,11 +47,9 @@ Track Ruby linter errors run:`rubocop`
 To auto-correct Rubocop offenses run: `rubocop --auto-correct-all` 
 
 
-## to run the schema.sql 
-- Open PostgreSQL and create a new database
-- Go to the `database` folder
-- copy the content of `schema.sql" and past it to the query to tool of the pgAdmin of PostgreSQL
-- then run it
+### Run tests
+- To run All the tests:
+   * Open the terminal and run `bundle exec rspec spec`
 
 ## Author
 
