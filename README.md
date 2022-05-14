@@ -1,56 +1,65 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Rails Blog Application
 
-> Description the project.
+> The Blog app that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- Ruby on Rails
+- PostgreSql
+- Html
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Coming Soon](#)
 
 
-## Getting Started
+### `Getting Started`
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
+To get a local copy of this project:
 
 ### Prerequisites
 
-### Setup
+* Make sure `Ruby` version ruby 2.5.0 or later is installed on your computer.
+* Make sure `ruby on rails` version 6.0.0 or later is installed on your computer.
+* Make sure `postgresql` is installed on your computer.
 
-### Install
+Clone this repository:
+   * Type in your terminal : `git clone git@github.com:danielufeli/railsblog.git`
 
-### Usage
+- Open the repository with `cd railsblog`
+- Use your favorite Integrated Development Environment (e.g. for Visual Studio Code the command is `code .`)
 
-### Run tests
+- To get started, In the root directory run:
+   * `gem install bundler`
+   * Then run: `bundle install`
+   * Run the command `rails db:create` to setup database.
+   * Then `rails s` to launch the application
 
-### Deployment
+
+### To track linter errors locally follow these steps:  
+
+Track Ruby linter errors run:`rubocop`
+
+To auto-correct Rubocop offenses run: `rubocop --auto-correct-all` 
 
 
+## to run the schema.sql 
+- Open PostgreSQL and create a new database
+- Go to the `database` folder
+- copy the content of `schema.sql" and past it to the query to tool of the pgAdmin of PostgreSQL
+- then run it
 
-## Authors
+## Author
 
-👤 **Author1**
+*Daniel Ufeli*
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@danielufeli](https://github.com/danielufeli)
+- Twitter: [@danielufeli](https://twitter.com/danielufeli)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/danielcode)
 
 ## 🤝 Contributing
 
