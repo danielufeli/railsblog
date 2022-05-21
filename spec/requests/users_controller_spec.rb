@@ -1,56 +1,46 @@
 require 'rails_helper'
 
-RSpec.describe 'UsersControllers', type: :request do
-  describe 'GET /index' do
-    it 'is the root of the website' do
-      get '/'
-      expect(response).to have_http_status(:ok)
+RSpec.describe 'Posts', type: :request do
+  before(:each) do
+    @user_test = User.create(name: 'James', photo: 'url/photo', bio: 'Daniel Bio', post_counter: 0)
+    @post_test = Post.create(
+      user: @user_test,
+      title: 'Harry Potter versus Tom Riddle',
+      text: 'Harry Potter first post content name',
+      commentsCounter: 0,
+      likesCounter: 0
+    )
+  end
+
+  describe 'GET#index' do
+    before { get user_posts_path(@user_test.id) }
+
+    it 'renders index template' do
       expect(response).to render_template(:index)
     end
 
-    it 'has a success status' do
-      get '/users'
+    it 'includes the posts list' do
+      expect(response.body).to include('Harry Potter first post name')
+    end
+
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
-    end
-
-    context 'renders index template' do
-      it 'renders correct template' do
-        get '/users'
-        expect(response).to render_template(:index)
-      end
-      it "doesn't render other template" do
-        get '/users'
-        expect(response).to_not render_template(:show)
-      end
-    end
-
-    it 'has index placeholder' do
-      get '/users'
-      expect(response.body).to include('Lists of Users')
     end
   end
 
-  describe 'GET /show' do
-    it 'has a success status' do
-      get '/users/737'
+  describe 'GET#show' do
+    before { get user_post_path(@user_test.id, @post_test.id) }
+
+    it 'renders show template' do
+      expect(response).to render_template(:show)
+    end
+
+    it 'includes the posts detail info' do
+      expect(response.body).to include('Harry Potter first post name')
+    end
+
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
-    end
-
-    context 'renders show template' do
-      it 'renders correct template' do
-        get '/users/737'
-        expect(response).to render_template(:show)
-      end
-
-      it "doesn't render other template" do
-        get '/users/737'
-        expect(response).to_not render_template(:index)
-      end
-    end
-
-    it 'contains show placeholder' do
-      get '/users/737'
-      expect(response.body).to include('User Information Page')
     end
   end
 end
