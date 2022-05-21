@@ -22,7 +22,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'validates the numericality of the commentsCounter' do
-    post.commentsCounter= 'This is really good post!'
+    post.commentsCounter = 'This is really good post!'
     expect(post).to_not be_valid
   end
 
