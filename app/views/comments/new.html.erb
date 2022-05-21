@@ -2,6 +2,6 @@
 <%= tag.h1('New Comment', class: 'h1 text-center') %>
 <%= form_with model: [post, Comment.new], :html => {:class => "form-horizontal center"} do |f| %>
   <%= f.text_area :text, rows: 10, placeholder: 'Enter your comment', class: "form-control" %>
-  <%= f.submit 'Save', class: "form-control" %>
+  <%= f.submit 'Save', class: "mt-2 btn btn-primary" %>
 <% end %>
 </div>

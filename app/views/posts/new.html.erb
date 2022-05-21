@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container text-center w-50">
 <%= tag.h1('New Post', class: 'h1') %>
-<%= form_with model: Post.new do |f| %>
-  <%= f.text_field :title, placeholder: 'Title' %>
-  <%= f.text_area :text, rows: 20, placeholder: 'Enter the content' %>
-  <%= f.submit 'Save' %>
+<%= form_with model: Post.new, :html => {:class => "form-horizontal center"} do |f| %>
+  <%= f.text_field :title, placeholder: 'Title', class: "form-control" %>
+  <%= f.text_area :text, rows: 10, placeholder: 'Enter the content', class: "mt-2 form-control" %>
+  <%= f.submit 'Save', class: "mt-2 btn btn-primary"  %>
 <% end %>
 </div>
