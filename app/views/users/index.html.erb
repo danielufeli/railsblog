@@ -1,1 +1,5 @@
-<h1>Lists of Users</h1>
+<ul class="list-group mt-5">
+  <% @users.each do |user| %>
+    <%= render 'users/user', user: user %>
+  <% end %>
+</ul> 
