@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
       redirect_to user_post_url(@post.user.id, @post.id)
     else
       flash.now[:error] = @comment.errors.full_messages.to_sentence
-      render :new, locals: { post: @post }, status: 422
+      render :new, locals: { user: @current_user, post: @post }, status: 422
     end
   end
 
