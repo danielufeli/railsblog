@@ -25,5 +25,5 @@
 </ul>
 
 <button type="button" class="btn btn-secondary">
-  See all posts
+<%= link_to 'See All Posts', user_posts_path(current_user.id), class: "nav-link" %>
 </button> 
