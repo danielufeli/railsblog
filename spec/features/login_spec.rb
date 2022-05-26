@@ -31,5 +31,12 @@ RSpec.describe 'Sign in process', type: :feature do
       click_button 'Log in'
       expect(page).to have_text('Invalid Email or password.')
     end
+
+    it `should return "Invalid Email or password." message after submit form with an incorrect email.` do
+      fill_in 'user[email]', with: 'wrong.user@gmail.com'
+      fill_in 'user[password]', with: 'password'
+      click_button 'Log in'
+      expect(page).to have_text('Invalid Email or password.')
+    end
   end
 end
