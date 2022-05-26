@@ -45,5 +45,13 @@ RSpec.describe 'Sign in process', type: :feature do
       click_button 'Log in'
       expect(page).to have_text('Invalid Email or password.')
     end
+
+    it `should return "Signed in successfully." message after submit form with the correct email and password.` do
+      fill_in 'user[email]', with: 'user@gmail.com'
+      fill_in 'user[password]', with: 'password'
+      click_button 'Log in'
+      expect(current_path).to eq(root_path)
+      expect(page).to have_text('Signed in successfully.')
+    end
   end
 end
