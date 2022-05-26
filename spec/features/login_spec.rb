@@ -25,4 +25,11 @@ RSpec.describe 'Sign in process', type: :feature do
       expect(submit_button).to_not be_nil
     end
   end
+
+  context '#Post' do
+    it `should return "Invalid Email or password." message after submit form with empty email and password fields.` do
+      click_button 'Log in'
+      expect(page).to have_text('Invalid Email or password.')
+    end
+  end
 end
