@@ -7,7 +7,6 @@ class Like < ApplicationRecord
 
   validates :user, presence: true
   validates :post, presence: true
-  validates :author_id, uniqueness: { scope: :post_id }
 
   private
 

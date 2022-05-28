@@ -16,13 +16,12 @@ RSpec.describe 'Sign in process', type: :feature do
   end
 
   context '#GET' do
-    it `should validate if there are username and password inputs and the "Log in" button` do
+    it 'should validate if there are username and password inputs and the Log in button' do
       email_field = find_field('user[email]')
       password_field = find_field('user[password]')
-      submit_button = find_field('Log in')
+      expect(page).to have_content('Log in')
       expect(email_field).to_not be_nil
       expect(password_field).to_not be_nil
-      expect(submit_button).to_not be_nil
     end
   end
 
