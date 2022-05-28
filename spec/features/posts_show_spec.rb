@@ -3,34 +3,34 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :feature do
   describe 'show page' do
     before :all do
-    User.destroy_all
-    @user_test = User.create(
-      name: 'Daniel',
-      email: 'user@gmail.com',
-      password: 'password',
-      confirmed_at: Time.now
-    )
-  end
+      User.destroy_all
+      @user_test = User.create(
+        name: 'Daniel',
+        email: 'user@gmail.com',
+        password: 'password',
+        confirmed_at: Time.now
+      )
+    end
 
     before(:each) do
       @first_post = Post.create!(
-      author_id: @user_test.id,
-      title: 'First Post',
-      text: 'Hello'
-    )
-    @first_comment = Comment.create!(
-      post_id: @first_post.id,
-      author_id: @user_test.id,
-      text: 'First comment'
-    )
-    @first_like = Like.create!(
-      post_id: @first_post.id,
-      author_id: @user_test.id
-    )
-     @second_like = Like.create!(
-      post_id: @first_post.id,
-      author_id: @user_test.id
-    )
+        author_id: @user_test.id,
+        title: 'First Post',
+        text: 'Hello'
+      )
+      @first_comment = Comment.create!(
+        post_id: @first_post.id,
+        author_id: @user_test.id,
+        text: 'First comment'
+      )
+      @first_like = Like.create!(
+        post_id: @first_post.id,
+        author_id: @user_test.id
+      )
+      @second_like = Like.create!(
+        post_id: @first_post.id,
+        author_id: @user_test.id
+      )
       visit new_user_session_path
       page.fill_in 'Email', with: 'user@gmail.com'
       page.fill_in 'Password', with: 'password'

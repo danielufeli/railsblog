@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe 'User', type: :feature do
   describe 'show page' do
     before :all do
-    User.destroy_all
-    @user_test = User.create(
-      name: 'Daniel',
-      email: 'user1@gmail.com',
-      password: 'password',
-      confirmed_at: Time.now
-    )
-  end
+      User.destroy_all
+      @user_test = User.create(
+        name: 'Daniel',
+        email: 'user1@gmail.com',
+        password: 'password',
+        confirmed_at: Time.now
+      )
+    end
 
     before(:each) do
       @first_post = Post.create! author_id: @user_test.id, title: 'first_post', text: 'Hello 1'
